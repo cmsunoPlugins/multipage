@@ -1,0 +1,200 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CmsUno\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-24 13:05+0100\n"
+"PO-Revision-Date: 2015-08-24 13:06+0100\n"
+"Last-Translator: jacques Malgrange <contacter@boiteasite.fr>\n"
+"Language-Team: Jacques Malgrange <contacter@boiteasite.fr>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Report-\tmsgstr-Bugs-To: \n"
+"Report-\t\tmsgstr-Bugs-To: \n"
+"X-Poedit-KeywordsList: _\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: iso-8859-1\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-SearchPath-0: ../../..\n"
+
+#: ../../../multipage.php:28
+msgid "Multipage"
+msgstr "Multipage"
+
+#: ../../../multipage.php:29
+msgid "Allowing multiple pages with CMSUno."
+msgstr "Créer et gérer plusieurs pages avec CMSUno."
+
+#: ../../../multipage.php:30
+msgid "Use Code"
+msgstr "Utiliser le code"
+
+#: ../../../multipage.php:30
+msgid "in the template to insert the menu containing all the pages."
+msgstr "dans le template pour insérer le menu contenant toutes les pages."
+
+#: ../../../multipage.php:31
+#: ../../../multipage.php:34
+msgid "Active Page"
+msgstr "Page active"
+
+#: ../../../multipage.php:80
+msgid "Activate this page"
+msgstr "Activer cette page"
+
+#: ../../../multipage.php:80
+msgid "Activate"
+msgstr "Activer"
+
+#: ../../../multipage.php:81
+msgid "Select the page you want to edit. You can publish it and then edit another page."
+msgstr "Sélectionner la page que vous souhaitez éditer. Vous pourrez la publier puis en éditer une autre."
+
+#: ../../../multipage.php:86
+msgid "Menu Manager"
+msgstr "Gestionnaire de menu"
+
+#: ../../../multipage.php:87
+msgid "Drag and Drop items to reorder your menu. Change the item title. Don't forget to save."
+msgstr "Déplacez les items à la souris pour organiser le menu. Changez le titre. N'oubliez pas de sauvegarder."
+
+#: ../../../multipage.php:88
+msgid "Leave title empty to remove item."
+msgstr "Laisser vide pour supprimer un item."
+
+#: ../../../multipage.php:93
+msgid "Save Menu"
+msgstr "Sauvegarder le menu"
+
+#: ../../../multipage.php:95
+#: ../../../multipage.php:106
+msgid "Add External Link"
+msgstr "Ajouter un lien externe"
+
+#: ../../../multipage.php:98
+msgid "URL"
+msgstr "Adresse Url"
+
+#: ../../../multipage.php:100
+msgid "Page URL to insert in the menu. Appear in blue in Menu Manager."
+msgstr "Adresse de la page à insérer au menu. Les liens externes sont en bleu dans ce tableau."
+
+#: ../../../multipage.php:103
+msgid "Title"
+msgstr "Titre"
+
+#: ../../../multipage.php:108
+msgid "Title that will appear in the menu."
+msgstr "Titre à afficher dans le menu."
+
+#: ../../../multipage.php:112
+msgid "Create new page"
+msgstr "Créer une nouvelle page"
+
+#: ../../../multipage.php:115
+#: ../../../multipage.php:129
+msgid "Filename"
+msgstr "Nom de fichier"
+
+#: ../../../multipage.php:118
+msgid "Create page"
+msgstr "Créer la page"
+
+#: ../../../multipage.php:118
+msgid "Create"
+msgstr "Créer"
+
+#: ../../../multipage.php:121
+msgid "Name of the HTML file (appears in URL). The used words are important for SEO."
+msgstr "Nom du fichier HTML (visible dans l'Url). Les mots utilisés sont importants pour le référencement."
+
+#: ../../../multipage.php:122
+msgid "Check and Save CONFIG tab after creation."
+msgstr "Vérifier et enregistrer l'onglet CONFIG après création."
+
+#: ../../../multipage.php:126
+msgid "Remove page"
+msgstr "Supprimer une page"
+
+#: ../../../multipage.php:132
+#: ../../../multipage.php:142
+msgid "Are you sure ?"
+msgstr "Etes-vous certain ?"
+
+#: ../../../multipage.php:132
+msgid "Remove this page"
+msgstr "Supprimer cette page"
+
+#: ../../../multipage.php:132
+msgid "Remove"
+msgstr "Supprimer"
+
+#: ../../../multipage.php:134
+msgid "Remove all data created for this page. Did you make a backup ?"
+msgstr "Supprime toutes les données de cette page. Avez-vous fait une sauvegarde ?"
+
+#: ../../../multipage.php:137
+#: ../../../multipage.php:140
+msgid "Publish all pages"
+msgstr "Publier toutes les pages"
+
+#: ../../../multipage.php:142
+msgid "OK"
+msgstr "OK"
+
+#: ../../../multipage.php:142
+#: ../../../multipage.php:220
+#: ../../../multipage.php:284
+#: ../../../multipage.php:295
+msgid "Error"
+msgstr "Erreur"
+
+#: ../../../multipage.php:142
+msgid "Publish"
+msgstr "Publier"
+
+#: ../../../multipage.php:144
+msgid "Publish all existing pages in CMSUno. Useful if you change your template."
+msgstr "Publier toutes les pages existantes sur CMSUno. Utile par exemple lors d'une modification du template."
+
+#: ../../../multipage.php:162
+#: ../../../multipage.php:266
+msgid "Saved"
+msgstr "Sauvegardé"
+
+#: ../../../multipage.php:163
+#: ../../../multipage.php:270
+msgid "Backup missed"
+msgstr "Echec de la sauvegarde"
+
+#: ../../../multipage.php:219
+msgid "Menu Saved"
+msgstr "Menu sauvegardé"
+
+#: ../../../multipage.php:235
+msgid "Link added"
+msgstr "Lien ajouté"
+
+#: ../../../multipage.php:237
+msgid "Already Exist"
+msgstr "Existe déjà"
+
+#: ../../../multipage.php:239
+#: ../../../multipage.php:252
+msgid "Save Menu First"
+msgstr "Sauvegarder d'abord le menu"
+
+#: ../../../multipage.php:250
+msgid "Link removed"
+msgstr "Lien supprimé"
+
+#: ../../../multipage.php:278
+msgid "Deletion made"
+msgstr "Suppression effectuée"
+
+#: ../../../multipage.php:282
+msgid "Impossible deletion"
+msgstr "Suppression impossible"
+
