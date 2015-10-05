@@ -26,3 +26,5 @@ u::::::::::::::u  n::::n    n::::n  o:::::ooooo:::::o
 This plugin allows you to create and manage multiple pages in CMSUno.
 Drag and Drop Menu Manager.
 Simple and practical for a complete website.
+
+[CMSUno](https://github.com/boiteasite/cmsuno)
