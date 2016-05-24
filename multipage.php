@@ -163,6 +163,11 @@ if (isset($_POST['action']))
 		else echo '!'._('Backup missed');
 		break;
 		// ********************************************************************************************
+		case 'hookBusy':
+		if(file_put_contents('../../data/busy.json', '{"nom":"'.strip_tags($_POST['busy']).'"}')) echo _('Page selected');
+		else echo '!'._('Error');
+		break;
+		// ********************************************************************************************
 		case 'saveMenu':
 		if(isset($_POST['menu']))
 			{
@@ -286,13 +291,28 @@ if (isset($_POST['action']))
 		// ********************************************************************************************
 		case 'pubAll':
 		$a = array();
-		if ($h=opendir('../../data/'))
+		if($h=opendir('../../data/'))
 			{
 			while(($d=readdir($h))!==false) if(is_dir('../../data/'.$d) && file_exists('../../data/'.$d.'/site.json') && $d!='.' && $d!='..') $a[] = $d;
 			closedir($h);
 			echo json_encode($a);
 			}
 		else echo '!'._('Error');
+		break;
+		// ********************************************************************************************
+		case 'hook':
+		$a = '';
+		if($h=opendir('../../data/'))
+			{
+			while(($d=readdir($h))!==false) if(is_dir('../../data/'.$d) && file_exists('../../data/'.$d.'/site.json') && $d!='.' && $d!='..')
+				{
+				if($d==$_POST['Ubusy']) $a = '<li><a style="text-decoration:underline;color:#fff;" href="javascript:void(0)">'.$d.'</a></li>' . $a;
+				else $a .= '<li><a href="javascript:void(0)" onClick="f_hookBusy_multipage(\''.$d.'\');">'.$d.'</a></li>';
+				}
+			closedir($h);
+			}
+		if($a) echo '<ul>'.$a.'</ul>';
+		else echo '';
 		break;
 		// ********************************************************************************************
 		}
