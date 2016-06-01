@@ -31,5 +31,6 @@ Simple and practical for a complete website.
 
 ### Versions ###
 
+* 1.1.1 - 01/06/2016 : Translation correction.
 * 1.1 - 24/05/2016 : Hook to add a dropdown page list under Page in CMSUno topMenu
 * 1.0 - 05/10/2015 : First stable version

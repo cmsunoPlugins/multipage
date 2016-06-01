@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CmsUno\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-24 13:05+0100\n"
-"PO-Revision-Date: 2015-08-24 13:06+0100\n"
+"POT-Creation-Date: 2016-06-01 10:35+0100\n"
+"PO-Revision-Date: 2016-06-01 10:35+0100\n"
 "Last-Translator: jacques Malgrange <contacter@boiteasite.fr>\n"
 "Language-Team: Jacques Malgrange <contacter@boiteasite.fr>\n"
 "Language: \n"
@@ -145,9 +145,10 @@ msgid "OK"
 msgstr "OK"
 
 #: ../../../multipage.php:142
-#: ../../../multipage.php:220
-#: ../../../multipage.php:284
-#: ../../../multipage.php:295
+#: ../../../multipage.php:168
+#: ../../../multipage.php:225
+#: ../../../multipage.php:289
+#: ../../../multipage.php:300
 msgid "Error"
 msgstr "Erreur"
 
@@ -160,41 +161,45 @@ msgid "Publish all existing pages in CMSUno. Useful if you change your template.
 msgstr "Publier toutes les pages existantes sur CMSUno. Utile par exemple lors d'une modification du template."
 
 #: ../../../multipage.php:162
-#: ../../../multipage.php:266
+#: ../../../multipage.php:271
 msgid "Saved"
 msgstr "Sauvegardé"
 
 #: ../../../multipage.php:163
-#: ../../../multipage.php:270
+#: ../../../multipage.php:275
 msgid "Backup missed"
 msgstr "Echec de la sauvegarde"
 
-#: ../../../multipage.php:219
+#: ../../../multipage.php:167
+msgid "Page selected"
+msgstr "Page sélectionnée"
+
+#: ../../../multipage.php:224
 msgid "Menu Saved"
 msgstr "Menu sauvegardé"
 
-#: ../../../multipage.php:235
+#: ../../../multipage.php:240
 msgid "Link added"
 msgstr "Lien ajouté"
 
-#: ../../../multipage.php:237
+#: ../../../multipage.php:242
 msgid "Already Exist"
 msgstr "Existe déjà"
 
-#: ../../../multipage.php:239
-#: ../../../multipage.php:252
+#: ../../../multipage.php:244
+#: ../../../multipage.php:257
 msgid "Save Menu First"
 msgstr "Sauvegarder d'abord le menu"
 
-#: ../../../multipage.php:250
+#: ../../../multipage.php:255
 msgid "Link removed"
 msgstr "Lien supprimé"
 
-#: ../../../multipage.php:278
+#: ../../../multipage.php:283
 msgid "Deletion made"
 msgstr "Suppression effectuée"
 
-#: ../../../multipage.php:282
+#: ../../../multipage.php:287
 msgid "Impossible deletion"
 msgstr "Suppression impossible"
 
