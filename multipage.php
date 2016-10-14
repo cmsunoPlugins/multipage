@@ -25,13 +25,13 @@ if (isset($_POST['action']))
 			li li{margin-left:30px;}
 			#multipageMenu>li:first-child li{margin-left:0;}
 		</style>
-			<h2><?php echo _("Multipage");?></h2>
-			<p><?php echo _("Allowing multiple pages with CMSUno.");?></p>
-			<p><?php echo _("Use Code");?>&nbsp;<code>[[multimenu]]</code>&nbsp;<?php echo _("in the template to insert the menu containing all the pages.");?></p>
-			<h3><?php echo _("Active Page");?></h3>
+			<h2><?php echo T_("Multipage");?></h2>
+			<p><?php echo T_("Allowing multiple pages with CMSUno.");?></p>
+			<p><?php echo T_("Use Code");?>&nbsp;<code>[[multimenu]]</code>&nbsp;<?php echo T_("in the template to insert the menu containing all the pages.");?></p>
+			<h3><?php echo T_("Active Page");?></h3>
 			<table class="hForm">
 				<tr>
-					<td><label><?php echo _("Active Page");?></label></td>
+					<td><label><?php echo T_("Active Page");?></label></td>
 					<td>
 						<select id="multipageBusy">
 							<?php
@@ -77,71 +77,71 @@ if (isset($_POST['action']))
 						</select>
 					</td>
 					<td>
-						<div class="bouton" style="margin:0 0 0 30px;" onClick="f_saveBusy_multipage(document.getElementById('multipageBusy').options[document.getElementById('multipageBusy').selectedIndex].value);" title="<?php echo _("Activate this page");?>"><?php echo _("Activate");?></div>
-						<em><?php echo _("Select the page you want to edit. You can publish it and then edit another page.");?></em>
+						<div class="bouton" style="margin:0 0 0 30px;" onClick="f_saveBusy_multipage(document.getElementById('multipageBusy').options[document.getElementById('multipageBusy').selectedIndex].value);" title="<?php echo T_("Activate this page");?>"><?php echo T_("Activate");?></div>
+						<em><?php echo T_("Select the page you want to edit. You can publish it and then edit another page.");?></em>
 					</td>
 				</tr>
 			</table>
 			<hr />
-			<h3><?php echo _("Menu Manager");?></h3>
-			<p><?php echo _("Drag and Drop items to reorder your menu. Change the item title. Don't forget to save.");?></p>
-			<p><?php echo _("Leave title empty to remove item.");?></p>
+			<h3><?php echo T_("Menu Manager");?></h3>
+			<p><?php echo T_("Drag and Drop items to reorder your menu. Change the item title. Don't forget to save.");?></p>
+			<p><?php echo T_("Leave title empty to remove item.");?></p>
 				<ul id="multipageMenu">
 					<?php echo $menu; ?>
 				</ul>
 			<div class="clear"></div>
-			<div class="bouton fr" style="margin-top:-36px;" onClick="f_saveMenu_multipage();" title="<?php echo _("Save Menu");?>"><?php echo _("Save Menu");?></div>
+			<div class="bouton fr" style="margin-top:-36px;" onClick="f_saveMenu_multipage();" title="<?php echo T_("Save Menu");?>"><?php echo T_("Save Menu");?></div>
 			<div class="clear"></div>
-			<h3><?php echo _("Add External Link");?></h3>
+			<h3><?php echo T_("Add External Link");?></h3>
 			<table class="hForm">
 				<tr>
-					<td><label><?php echo _("URL");?></label></td>
+					<td><label><?php echo T_("URL");?></label></td>
 					<td><input type="text" class="input" style="width:200px;" id="multipageUrl" /></td>
-					<td><em><?php echo _("Page URL to insert in the menu. Appear in blue in Menu Manager.");?></em></td>
+					<td><em><?php echo T_("Page URL to insert in the menu. Appear in blue in Menu Manager.");?></em></td>
 				</tr>
 				<tr>
-					<td><label><?php echo _("Title");?></label></td>
+					<td><label><?php echo T_("Title");?></label></td>
 					<td>
 					<input type="text" class="input" style="width:200px;" id="multipageTit" />
-					<div class="bouton" style="margin:5px 0 0 30px;" onClick="f_other_multipage(document.getElementById('multipageUrl').value,document.getElementById('multipageTit').value);" title="<?php echo _("Add External Link");?>"><?php echo _("Add External Link");?></div>
+					<div class="bouton" style="margin:5px 0 0 30px;" onClick="f_other_multipage(document.getElementById('multipageUrl').value,document.getElementById('multipageTit').value);" title="<?php echo T_("Add External Link");?>"><?php echo T_("Add External Link");?></div>
 					</td>
-					<td><em><?php echo _("Title that will appear in the menu.");?></em></td>
+					<td><em><?php echo T_("Title that will appear in the menu.");?></em></td>
 				</tr>
 			</table>
 			<hr />
-			<h3><?php echo _("Create new page");?></h3>
+			<h3><?php echo T_("Create new page");?></h3>
 			<table class="hForm">
 				<tr>
-					<td><label><?php echo _("Filename");?></label></td>
+					<td><label><?php echo T_("Filename");?></label></td>
 					<td>
 						<input type="text" class="input" style="text-align:right;width:100px;" id="multipageNom" />.html
-						<div class="bouton fr" onClick="f_newPage_multipage();" title="<?php echo _("Create page");?>"><?php echo _("Create");?></div>
+						<div class="bouton fr" onClick="f_newPage_multipage();" title="<?php echo T_("Create page");?>"><?php echo T_("Create");?></div>
 					</td>
 					<td>
-						<em><?php echo _("Name of the HTML file (appears in URL). The used words are important for SEO."); ?></em><br />
-						<em><?php echo _("Check and Save CONFIG tab after creation.");?></em>
+						<em><?php echo T_("Name of the HTML file (appears in URL). The used words are important for SEO."); ?></em><br />
+						<em><?php echo T_("Check and Save CONFIG tab after creation.");?></em>
 					</td>
 				</tr>
 			</table>
-			<h3><?php echo _("Remove page");?></h3>
+			<h3><?php echo T_("Remove page");?></h3>
 			<table class="hForm">
 				<tr>
-					<td><label><?php echo _("Filename");?></label></td>
+					<td><label><?php echo T_("Filename");?></label></td>
 					<td>
 						<select id="multipageDel"><?php echo $page; ?></select><br />
-						<div class="bouton" style="margin:5px 0 0 30px;" onClick="f_delPage_multipage(document.getElementById('multipageDel').options[document.getElementById('multipageDel').selectedIndex].value,'<?php echo _("Are you sure ?");?>');" title="<?php echo _("Remove this page");?>"><?php echo _("Remove");?></div>
+						<div class="bouton" style="margin:5px 0 0 30px;" onClick="f_delPage_multipage(document.getElementById('multipageDel').options[document.getElementById('multipageDel').selectedIndex].value,'<?php echo T_("Are you sure ?");?>');" title="<?php echo T_("Remove this page");?>"><?php echo T_("Remove");?></div>
 					</td>
-					<td><em><?php echo _("Remove all data created for this page. Did you make a backup ?");?></em></td>
+					<td><em><?php echo T_("Remove all data created for this page. Did you make a backup ?");?></em></td>
 				</tr>
 			</table>
-			<h3><?php echo _("Publish all pages");?></h3>
+			<h3><?php echo T_("Publish all pages");?></h3>
 			<table class="hForm">
 				<tr>
-					<td><label><?php echo _("Publish all pages");?></label></td>
+					<td><label><?php echo T_("Publish all pages");?></label></td>
 					<td>
-						<div class="bouton" style="margin:5px 0 0 30px;" onClick="f_pubAll_multipage(<?php echo "'"._("Are you sure ?")."','"._("OK")."','"._("Error")."'"; ?>);" title="<?php echo _("Publish");?>"><?php echo _("Publish");?></div>
+						<div class="bouton" style="margin:5px 0 0 30px;" onClick="f_pubAll_multipage(<?php echo "'".T_("Are you sure ?")."','".T_("OK")."','".T_("Error")."'"; ?>);" title="<?php echo T_("Publish");?>"><?php echo T_("Publish");?></div>
 					</td>
-					<td><em><?php echo _("Publish all existing pages in CMSUno. Useful if you change your template.");?></em></td>
+					<td><em><?php echo T_("Publish all existing pages in CMSUno. Useful if you change your template.");?></em></td>
 				</tr>
 			</table>
 			<div id="pubResult"></div>
@@ -159,13 +159,13 @@ if (isset($_POST['action']))
 		break;
 		// ********************************************************************************************
 		case 'saveBusy':
-		if(file_put_contents('../../data/busy.json', '{"nom":"'.strip_tags($_POST['busy']).'"}')) echo _('Saved');
-		else echo '!'._('Backup missed');
+		if(file_put_contents('../../data/busy.json', '{"nom":"'.strip_tags($_POST['busy']).'"}')) echo T_('Saved');
+		else echo '!'.T_('Backup missed');
 		break;
 		// ********************************************************************************************
 		case 'hookBusy':
-		if(file_put_contents('../../data/busy.json', '{"nom":"'.strip_tags($_POST['busy']).'"}')) echo _('Page selected');
-		else echo '!'._('Error');
+		if(file_put_contents('../../data/busy.json', '{"nom":"'.strip_tags($_POST['busy']).'"}')) echo T_('Page selected');
+		else echo '!'.T_('Error');
 		break;
 		// ********************************************************************************************
 		case 'saveMenu':
@@ -221,8 +221,8 @@ if (isset($_POST['action']))
 			if($level==1) $out .= '</ul></li>';
 			$out .= '</ul>\');'."\r\n";
 			$out .= 'var cur=document.getElementById(multiCur);cur.className="current";var par=cur.parentElement.parentElement;if(par.tagName=="LI")par.className="inpath";'."\r\n";
-			if(file_put_contents('../../data/multimenu.js', $out) && file_put_contents('../../data/multipage.json', json_encode($a))) echo _('Menu Saved');
-			else echo '!'._('Error');
+			if(file_put_contents('../../data/multimenu.js', $out) && file_put_contents('../../data/multipage.json', json_encode($a))) echo T_('Menu Saved');
+			else echo '!'.T_('Error');
 			}
 		break;
 		// ********************************************************************************************
@@ -237,11 +237,11 @@ if (isset($_POST['action']))
 				{
 				$a['menu'][preg_replace("/[^A-Za-z0-9-_]/", "", $u)] = stripslashes($t);
 				$a['ext'][preg_replace("/[^A-Za-z0-9-_]/", "", $u)] = $u;
-				if(file_put_contents('../../data/multipage.json', json_encode($a))) echo _('Link added');
+				if(file_put_contents('../../data/multipage.json', json_encode($a))) echo T_('Link added');
 				}
-			else echo '!'._('Already Exist');
+			else echo '!'.T_('Already Exist');
 			}
-		else echo '!'._('Save Menu First');
+		else echo '!'.T_('Save Menu First');
 		break;
 		// ********************************************************************************************
 		case 'del':
@@ -252,9 +252,9 @@ if (isset($_POST['action']))
 			$a = json_decode($q,true);
 			unset($a['menu'][$u]);
 			unset($a['ext'][$u]);
-			if(file_put_contents('../../data/multipage.json', json_encode($a))) echo _('Link removed');
+			if(file_put_contents('../../data/multipage.json', json_encode($a))) echo T_('Link removed');
 			}
-		else echo '!'._('Save Menu First');
+		else echo '!'.T_('Save Menu First');
 		break;
 		// ********************************************************************************************
 		case 'newPage':
@@ -268,11 +268,11 @@ if (isset($_POST['action']))
 				{
 				file_put_contents('../../data/'.$Ubusy.'/chap0.txt', 'blabla...');
 				file_put_contents('../../data/busy.json', '{"nom":"'.$Ubusy.'"}');
-				echo _('Saved');
+				echo T_('Saved');
 				exit;
 				}
 			}
-		echo '!'._('Backup missed');
+		echo '!'.T_('Backup missed');
 		break;
 		// ********************************************************************************************
 		case 'delPage':
@@ -280,13 +280,13 @@ if (isset($_POST['action']))
 			{
 			if(f_rmdirR('../../data/'.strip_tags($_POST['del'])))
 				{
-				echo _('Deletion made');
+				echo T_('Deletion made');
 				if(is_dir('../../data/_sdata-'.$sdata.'/'.strip_tags($_POST['del']))) f_rmdirR('../../data/_sdata-'.$sdata.'/'.strip_tags($_POST['del']));
 				if(file_exists('../../../'.strip_tags($_POST['del']).'.html')) unlink('../../../'.strip_tags($_POST['del']).'.html');
 				}
-			else echo '!'._('Impossible deletion');
+			else echo '!'.T_('Impossible deletion');
 			}
-		else echo '!'._('Error');
+		else echo '!'.T_('Error');
 		break;
 		// ********************************************************************************************
 		case 'pubAll':
@@ -297,7 +297,7 @@ if (isset($_POST['action']))
 			closedir($h);
 			echo json_encode($a);
 			}
-		else echo '!'._('Error');
+		else echo '!'.T_('Error');
 		break;
 		// ********************************************************************************************
 		case 'hook':
