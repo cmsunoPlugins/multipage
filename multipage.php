@@ -214,13 +214,18 @@ if (isset($_POST['action']))
 					else if($level==1 && !isset($a['sub'][$k])) { $out .= '</ul></li>'; $level = 0; }
 					//
 					if(!isset($a['ext'][$k])) $out .= '<li id="'.$k.'"><a class="'.(!isset($a['sub'][$k])?'ul1':'ul2').'" href="'.$k.'.html">'.$v.'</a></li>';
-					else $out .= '<li id="'.$k.'"><a class="'.(!isset($a['sub'][$k])?'ul1':'ul2').'" href="'.$a['ext'][$k].'">'.$v.'</a></li>';
+					else
+						{
+						$u = $a['ext'][$k];
+						if(!preg_match("~^(?:f|ht)tps?://~i", $u)) $u = "//".$u;
+						$out .= '<li id="'.$k.'"><a class="'.(!isset($a['sub'][$k])?'ul1':'ul2').'" href="'.$u.'">'.$v.'</a></li>';
+						}
 					++$c;
 					}
 				}
 			if($level==1) $out .= '</ul></li>';
 			$out .= '</ul>\');'."\r\n";
-			$out .= 'var cur=document.getElementById(multiCur);cur.className="current";var par=cur.parentElement.parentElement;if(par.tagName=="LI")par.className="inpath";'."\r\n";
+			$out .= 'var cur=document.getElementById(multiCur);if(cur!==null){cur.className="current";var par=cur.parentElement.parentElement;if(par.tagName=="LI")par.className="inpath";}'."\r\n";
 			if(file_put_contents('../../data/multimenu.js', $out) && file_put_contents('../../data/multipage.json', json_encode($a))) echo T_('Menu Saved');
 			else echo '!'.T_('Error');
 			}
@@ -235,6 +240,8 @@ if (isset($_POST['action']))
 			$a = json_decode($q,true);
 			if(!isset($a['menu'][preg_replace("/[^A-Za-z0-9-_]/", "", $u)]))
 				{
+				if(empty($a['menu']) || !is_array($a['menu'])) $a['menu'] = array();
+				if(empty($a['ext']) || !is_array($a['ext'])) $a['ext'] = array();
 				$a['menu'][preg_replace("/[^A-Za-z0-9-_]/", "", $u)] = stripslashes($t);
 				$a['ext'][preg_replace("/[^A-Za-z0-9-_]/", "", $u)] = $u;
 				if(file_put_contents('../../data/multipage.json', json_encode($a))) echo T_('Link added');
