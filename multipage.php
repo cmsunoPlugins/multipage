@@ -16,18 +16,25 @@ if (isset($_POST['action']))
 		<div class="blocForm">
 		 <style>
 			#multipageMenu{list-style-type:none;margin:0;padding:0;width:600px;}
-			#multipageMenu .bouton{position:relative;display:block;margin:0 3px 3px;padding:7px 5px 5px 10px;font-size:105%;}
-			#multipageMenu li span.ui-icon{float:left;}
+			#multipageMenu .bouton{position:relative;display:block;margin:0 3px 3px;padding:7px 5px 5px 10px;font-size:105%;vertical-align:middle;}
+			#multipageMenu li span.ui-icon{float:left;margin-top:0;}
 			#multipageMenu li span.mri{margin-right:10px;}
-			#multipageMenu li input{position:absolute;top:4px;right:25px;width:240px;}
-			.multipageSupp {display:block;float:right;margin-right:0px;width:18px;background-image:url(uno/plugins/multipage/img/close.png);background-repeat:no-repeat;background-position:0 0;}
+			#multipageMenu li input{float:right;margin-right:25px;width:200px;border:3px}
+			.multipageSupp {display:block;position:absolute;right:5px;top:8px;width:18px;background-image:url(uno/plugins/multipage/img/close.png);background-repeat:no-repeat;background-position:0 0;}
 			.ui-icon{width:16px;}
 			li li{margin-left:30px;}
 			#multipageMenu>li:first-child li{margin-left:0;}
 		</style>
 			<h2><?php echo T_("Multipage");?></h2>
 			<p><?php echo T_("Allowing multiple pages with CMSUno.");?></p>
-			<p><?php echo T_("Use Code");?>&nbsp;<code>[[multimenu]]</code>&nbsp;<?php echo T_("in the template to insert the menu containing all the pages.");?></p>
+			<p><?php echo T_("Use Code in the template to insert the menu containing all the pages :");?></p>
+			<p style="padding-left:10px;">
+				<code>[[multimenu]]</code> :&nbsp;<?php echo T_("Code created dynamically in JavaScript (UL LI A).");?>
+				<br />
+				<code>[[multimenu-hard]]</code> :&nbsp;<?php echo T_("Code created during publication (UL LI A). Best for SEO.");?>
+				<br />
+				<code>[[multimenu-theme]]</code> :&nbsp;<?php echo T_("Code created by the theme during publication. Only for some themes.");?>
+			</p>
 			<h3><?php echo T_("Active Page");?></h3>
 			<table class="hForm">
 				<tr>
