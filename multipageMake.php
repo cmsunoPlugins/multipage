@@ -29,12 +29,12 @@ if(file_exists('data/multipage.json'))
 				$level = 0;
 				}
 			//
-			if(!isset($a['ext'][$k])) $out1h .= '<li id="'.$k.'"'.($k==$Ubusy?' class="current"':'').'><a class="'.(!isset($a['sub'][$k])?'ul1':'ul2').'" href="'.$k.'.html">'.$v.'</a></li>';
+			if(!isset($a['ext'][$k])) $out1h .= '<li id="'.$k.'"'.($k==$Ubusy?' class="current"':'').'><a class="'.(!isset($a['sub'][$k])?'ul1':'ul2').'" href="'.$k.'.html">'.stripslashes($v).'</a></li>';
 			else
 				{
 				$u = $a['ext'][$k];
 				if(!preg_match("~^(?:f|ht)tps?://~i", $u)) $u = '//'.$u;
-				$out1h .= '<li id="'.$k.'"><a class="'.(!isset($a['sub'][$k])?'ul1':'ul2').'" href="'.$u.'">'.$v.'</a></li>';
+				$out1h .= '<li id="'.$k.'"><a class="'.(!isset($a['sub'][$k])?'ul1':'ul2').'" href="'.$u.'">'.stripslashes($v).'</a></li>';
 				}
 			++$c;
 			}

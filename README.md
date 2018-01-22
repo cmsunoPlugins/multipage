@@ -62,6 +62,7 @@ $Uhtml = str_replace('[[multimenu-theme]]', $o, $Uhtml);
 
 ### Versions ###
 
+* 1.3.1 - 22/01/2018 : Fix slash display in Hard-multimenu.
 * 1.3 - 03/01/2018 : Add Hard multimenu and Array multimenu to publish custom menu.
 * 1.2.2 - 30/09/2017 : Fix issue with external url. Shortcode can be added in the content page.
 * 1.2.1 - 15/03/2017 : Fix issue when unknow lang.
