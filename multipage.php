@@ -35,7 +35,7 @@ if (isset($_POST['action']))
 				<br />
 				<code>[[multimenu-theme]]</code> :&nbsp;<?php echo T_("Code created by the theme during publication. Only for some themes.");?>
 			</p>
-			<h3><?php echo T_("Active Page");?></h3>
+			<h3><?php echo T_("Pages management");?></h3>
 			<table class="hForm">
 				<tr>
 					<td><label><?php echo T_("Active Page");?></label></td>
@@ -82,12 +82,23 @@ if (isset($_POST['action']))
 							echo $page;
 							?>
 						</select>
+						<div class="bouton" style="margin:0 0 0 30px;" onClick="f_saveBusy_multipage(document.getElementById('multipageBusy').options[document.getElementById('multipageBusy').selectedIndex].value);" title="<?php echo T_("Activate this page");?>"><?php echo T_("Activate");?></div>
 					</td>
 					<td>
-						<div class="bouton" style="margin:0 0 0 30px;" onClick="f_saveBusy_multipage(document.getElementById('multipageBusy').options[document.getElementById('multipageBusy').selectedIndex].value);" title="<?php echo T_("Activate this page");?>"><?php echo T_("Activate");?></div>
 						<em><?php echo T_("Select the page you want to edit. You can publish it and then edit another page.");?></em>
 					</td>
 				</tr>
+				<tr>
+					<td><label><?php echo T_("Master Page");?></label></td>
+					<td>
+						<select id="multipageMaster">
+						<?php echo $page; ?>
+						</select>
+						<div class="bouton" style="margin:0 0 0 30px;" onClick="f_saveMaster_multipage(document.getElementById('multipageMaster').options[document.getElementById('multipageMaster').selectedIndex].value);" title="<?php echo T_("Save");?>"><?php echo T_("Save");?></div>
+					</td>
+					<td>
+						<em><?php echo T_("Reference page that can be used for plugins configuration (Contact...).");?></em>
+					</td>
 			</table>
 			<hr />
 			<h3><?php echo T_("Menu Manager");?></h3>
@@ -160,18 +171,37 @@ if (isset($_POST['action']))
 		if(file_exists('../../data/busy.json'))
 			{
 			$q = file_get_contents('../../data/busy.json'); $a = json_decode($q,true);
-			echo $a['nom'];
+			if(empty($a['nom'])) $a['nom'] = '';
+			if(empty($a['master'])) $a['master'] = '';
+			echo json_encode($a);
 			}
 		else echo false;
 		break;
 		// ********************************************************************************************
 		case 'saveBusy':
-		if(file_put_contents('../../data/busy.json', '{"nom":"'.strip_tags($_POST['busy']).'"}')) echo T_('Saved');
+		$a = array();
+		if(file_exists('../../data/busy.json')) {
+			$q = file_get_contents('../../data/busy.json'); $a = json_decode($q,true);
+		}
+		if(file_put_contents('../../data/busy.json', '{"nom":"'.strip_tags($_POST['busy']).'","master":"'.(!empty($a['master'])?$a['master']:'').'"}')) echo T_('Saved');
+		else echo '!'.T_('Backup missed');
+		break;
+		// ********************************************************************************************
+		case 'saveMaster':
+		$a = array();
+		if(file_exists('../../data/busy.json')) {
+			$q = file_get_contents('../../data/busy.json'); $a = json_decode($q,true);
+		}
+		if(file_put_contents('../../data/busy.json', '{"nom":"'.(!empty($a['nom'])?$a['nom']:'').'","master":"'.strip_tags($_POST['master']).'"}')) echo T_('Saved');
 		else echo '!'.T_('Backup missed');
 		break;
 		// ********************************************************************************************
 		case 'hookBusy':
-		if(file_put_contents('../../data/busy.json', '{"nom":"'.strip_tags($_POST['busy']).'"}')) echo T_('Page selected');
+		$a = array();
+		if(file_exists('../../data/busy.json')) {
+			$q = file_get_contents('../../data/busy.json'); $a = json_decode($q,true);
+		}
+		if(file_put_contents('../../data/busy.json', '{"nom":"'.strip_tags($_POST['busy']).'","master":"'.(!empty($a['master'])?$a['master']:'').'"}')) echo T_('Page selected');
 		else echo '!'.T_('Error');
 		break;
 		// ********************************************************************************************
@@ -278,10 +308,14 @@ if (isset($_POST['action']))
 			{
 			mkdir('../../data/'.$Ubusy, 0755, true);
 			mkdir('../../data/_sdata-'.$sdata.'/'.$Ubusy, 0711, true);
+			$a = array();
+			if(file_exists('../../data/busy.json')) {
+				$q = file_get_contents('../../data/busy.json'); $a = json_decode($q,true);
+			}
 			if(file_put_contents('../../data/'.$Ubusy.'/site.json', '{"chap":[{"d":"0","t":"Welcome"}],"pub":0,"nom":"'.$Ubusy.'","plug":{"multipage":1}}'))
 				{
 				file_put_contents('../../data/'.$Ubusy.'/chap0.txt', 'blabla...');
-				file_put_contents('../../data/busy.json', '{"nom":"'.$Ubusy.'"}');
+				file_put_contents('../../data/busy.json', '{"nom":"'.$Ubusy.'","master":"'.(!empty($a['master'])?$a['master']:'').'"}');
 				echo T_('Saved');
 				exit;
 				}

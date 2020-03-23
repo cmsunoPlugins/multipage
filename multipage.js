@@ -5,9 +5,11 @@
 function f_load_multipage(){
 	jQuery(document).ready(function(){
 		jQuery.post('uno/plugins/multipage/multipage.php',{'action':'getBusy','unox':Unox},function(r){
-			var t=document.getElementById('multipageBusy'),to;
+			var a=JSON.parse(r),t=document.getElementById('multipageBusy'),to,m=document.getElementById('multipageMaster');
 			to=t.options;
-			for(v=0;v<to.length;v++){if(to[v].value==r){to[v].selected=true;v=to.length;}}
+			for(v=0;v<to.length;v++){if(to[v].value==a.nom){to[v].selected=true;v=to.length;}}
+			to=m.options;
+			for(v=0;v<to.length;v++){if(to[v].value==a.master){to[v].selected=true;v=to.length;}}
 		});
 		jQuery('#multipageMenu').sortable();
 	});
@@ -31,6 +33,12 @@ function f_level_multipage(f,g){
 function f_saveBusy_multipage(f){
 	jQuery.post('uno/plugins/multipage/multipage.php',{'action':'saveBusy','busy':f,'unox':Unox},function(r){
 		f_alert(r);window.location.reload();
+	});
+}
+//
+function f_saveMaster_multipage(f){
+	jQuery.post('uno/plugins/multipage/multipage.php',{'action':'saveMaster','master':f,'unox':Unox},function(r){
+		f_alert(r);
 	});
 }
 //
