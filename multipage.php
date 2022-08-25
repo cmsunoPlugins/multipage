@@ -209,7 +209,9 @@ if (isset($_POST['action']))
 		if(isset($_POST['menu']))
 			{
 			$q = explode(',', strip_tags($_POST['menu']));
-			$out = 'document.write(\'<ul id="multimenu">';
+			// $out = 'document.write(\'<ul id="multimenu">';
+			$out = 'document.getElementById("multimenuTarget").parentNode.innerHTML+=';
+			$out .= '\'<ul id="multimenu">';
 			$a = array(); $a1 = 0; $a2 = ''; $a3 = ''; $c = 0; $level = 0;
 			if(file_exists('../../data/multipage.json'))
 				{
@@ -261,7 +263,8 @@ if (isset($_POST['action']))
 					}
 				}
 			if($level==1) $out .= '</ul></li>';
-			$out .= '</ul>\');'."\r\n";
+			//$out .= '</ul>\');'."\r\n";
+			$out .= '</ul>\';'."\r\n";
 			$out .= 'var cur=document.getElementById(multiCur);if(cur!==null){cur.className="current";var par=cur.parentElement.parentElement;if(par.tagName=="LI")par.className="inpath";}'."\r\n";
 			if(file_put_contents('../../data/multimenu.js', $out) && file_put_contents('../../data/multipage.json', json_encode($a))) echo T_('Menu Saved');
 			else echo '!'.T_('Error');

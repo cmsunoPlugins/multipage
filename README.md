@@ -62,6 +62,7 @@ $Uhtml = str_replace('[[multimenu-theme]]', $o, $Uhtml);
 
 ### Versions ###
 
+* 1.5 - 25/08/2022 : Remove 'document.write' in multimenu.js.
 * 1.4 - 23/03/2020 : Add master page.
 * 1.3.1 - 22/01/2018 : Fix slash display in Hard-multimenu.
 * 1.3 - 03/01/2018 : Add Hard multimenu and Array multimenu to publish custom menu.
