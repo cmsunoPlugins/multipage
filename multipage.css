@@ -1,0 +1,16 @@
+#multipageMenu{list-style-type:none;margin:0;padding:0;width:600px;}
+#multipageMenu .bouton{position:relative;display:block;margin:0 3px 3px;padding:7px 5px 5px 10px;font-size:105%;vertical-align:middle;}
+#multipageMenu li span.ui-icon{float:left;margin-top:0;}
+#multipageMenu li span.mri{margin-right:10px;}
+#multipageMenu li input{float:right;margin-right:25px;width:200px;border:3px}
+#sauvMenu{margin-top:-36px;}
+.multipageSupp {display:block;position:absolute;right:5px;top:8px;width:18px;background-image:url(uno/plugins/multipage/img/close.png);background-repeat:no-repeat;background-position:0 0;}
+.ui-icon{width:16px;}
+li li{margin-left:30px;}
+#multipageMenu>li:first-child li{margin-left:0;}
+@media screen and (max-width:780px){
+	#multipageMenu{max-width:100%;}
+	#multipageMenu .bouton{height:auto;}
+	#multipageMenu li input{display:block;float:none;margin-left:54px;margin-right:0;width:160px;}
+	#sauvMenu{margin-top:10px;}
+}

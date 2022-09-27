@@ -13,18 +13,8 @@ if (isset($_POST['action']))
 		{
 		// ********************************************************************************************
 		case 'plugin': ?>
+		<link rel="stylesheet" type="text/css" media="screen" href="uno/plugins/multipage/multipage.css" />
 		<div class="blocForm">
-		 <style>
-			#multipageMenu{list-style-type:none;margin:0;padding:0;width:600px;}
-			#multipageMenu .bouton{position:relative;display:block;margin:0 3px 3px;padding:7px 5px 5px 10px;font-size:105%;vertical-align:middle;}
-			#multipageMenu li span.ui-icon{float:left;margin-top:0;}
-			#multipageMenu li span.mri{margin-right:10px;}
-			#multipageMenu li input{float:right;margin-right:25px;width:200px;border:3px}
-			.multipageSupp {display:block;position:absolute;right:5px;top:8px;width:18px;background-image:url(uno/plugins/multipage/img/close.png);background-repeat:no-repeat;background-position:0 0;}
-			.ui-icon{width:16px;}
-			li li{margin-left:30px;}
-			#multipageMenu>li:first-child li{margin-left:0;}
-		</style>
 			<h2><?php echo T_("Multipage");?></h2>
 			<p><?php echo T_("Allowing multiple pages with CMSUno.");?></p>
 			<p><?php echo T_("Use Code in the template to insert the menu containing all the pages :");?></p>
@@ -108,7 +98,7 @@ if (isset($_POST['action']))
 					<?php echo $menu; ?>
 				</ul>
 			<div class="clear"></div>
-			<div class="bouton fr" style="margin-top:-36px;" onClick="f_saveMenu_multipage();" title="<?php echo T_("Save Menu");?>"><?php echo T_("Save Menu");?></div>
+			<div id="sauvMenu" class="bouton fr" onClick="f_saveMenu_multipage();" title="<?php echo T_("Save Menu");?>"><?php echo T_("Save Menu");?></div>
 			<div class="clear"></div>
 			<h3><?php echo T_("Add External Link");?></h3>
 			<table class="hForm">
